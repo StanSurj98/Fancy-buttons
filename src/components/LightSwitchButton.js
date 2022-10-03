@@ -11,8 +11,8 @@ function LightSwitchButton(props) {
   return (
     <button className="LightSwitchButton" onClick={clickHandler}>
       {/* Short circuit conditional rendering */}
-      {light === 'on' ?? <span className="on"><i>💡</i> I'm on!</span>} 
-      {light === 'off' ?? <span className="off"><i>💡</i> I'm off!</span>}
+      {light === 'on' && <span className="on"><i>💡</i> I'm on!</span>} 
+      {light === 'off' && <span className="off"><i>💡</i> I'm off!</span>}
     </button> 
   );
 };

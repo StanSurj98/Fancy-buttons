@@ -17,10 +17,10 @@ function AngryButton(props) {
 
   return (
     // Pass reference to clickHandler button, and then before rendering we have conditional
-    <button className="AngryButton" onClick={clickHandler} style={{backgroundColor: `rgba(255,0,0,${anger})`}}>
+    <button style={{backgroundColor: `rgba(255,0,0,${anger})`}} className="AngryButton" onClick={clickHandler} >
       {/* Conditional rendering using short-circuiting the anger value */}
-      {anger < 1 ?? <span>Don't click me too much! </span> }
-      {anger > 1 ?? <span>Rawr!</span> }
+      {anger < 1 && <span>Don't click me too much! </span> }
+      {anger > 1 && <span>Rawr!</span> }
     </button>
   );
 };
