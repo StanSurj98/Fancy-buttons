@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 
 function LightSwitchButton(props) {
-  const [light, setLight] = useState('off');
+  // We lifted the state up to parent App.js and it passed it down here as a prop
+  const {light, setLight} = props;
 
+  // Since setLight is available from App.js still, we can STILL use this event handler here
   const clickHandler = () => {
     setLight( light === 'on' ? 'off' : 'on');
   }
