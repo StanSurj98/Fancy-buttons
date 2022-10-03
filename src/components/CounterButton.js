@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 function CounterButton(props) {
+  // useState(startingVal) = 0
+  const [clickAmt, setClickAmt] = useState(0);
+
   return (
     <button className="CounterButton">
-      You clicked me X amount of times
+      You clicked me {clickAmt} amount of times
     </button>
   );
 };
