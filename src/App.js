@@ -14,12 +14,14 @@ import { useState } from 'react';
 function App() {
   // Lifted state up from <LightSwitchButton /> component to here
   const [light, setLight] = useState('off');
+  // Conditionally adding a className="dark" if light is "off"
+  const dark = (light === "off") ? 'dark' : '';
 
   return (
-    <div className="App">
+    <div className={`App ${dark}`} >
       <h1>Fancy Buttons!</h1>
       <section>
-        <AngryButton />
+        <AngryButton /> 
         <CounterButton />
         {/* Passing down the useState for LightSwitchButton as props */}
         <LightSwitchButton light={light} setLight={setLight} />
