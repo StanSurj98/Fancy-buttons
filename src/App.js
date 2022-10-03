@@ -16,6 +16,12 @@ function App() {
   const [light, setLight] = useState('off');
   // Conditionally adding a className="dark" if light is "off"
   const dark = (light === "off") ? 'dark' : '';
+  // Good idea to keep logic that changes state near the declaration & NOT in child comps.
+  const switchLight = () => {
+    setLight( (light === 'on') ? 'off' : 'on');
+  }
+
+
 
   return (
     <div className={`App ${dark}`} >
@@ -23,8 +29,8 @@ function App() {
       <section>
         <AngryButton /> 
         <CounterButton />
-        {/* Passing down the useState for LightSwitchButton as props */}
-        <LightSwitchButton light={light} setLight={setLight} />
+        {/* Now we pass down the working function instead of each state */}
+        <LightSwitchButton light={light} switchLight={switchLight}/>
         <TextRepeaterButton />
       </section>
     </div>
